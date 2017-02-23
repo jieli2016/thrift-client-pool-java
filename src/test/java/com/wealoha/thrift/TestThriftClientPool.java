@@ -16,6 +16,7 @@ import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +32,7 @@ import com.wealoha.thrift.service.TestThriftServiceHandler;
  * @author javamonk
  * @createTime 2014年7月4日 下午4:51:18
  */
+@Ignore
 public class TestThriftClientPool {
 
     private static Logger logger = LoggerFactory.getLogger(TestThriftClientPool.class);

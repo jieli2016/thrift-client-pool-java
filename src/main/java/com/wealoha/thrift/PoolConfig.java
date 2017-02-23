@@ -14,6 +14,8 @@ public class PoolConfig extends GenericObjectPoolConfig {
     private int timeout = 0;
 
     private boolean failover = false;
+    
+    private long maxAge = 60000;
 
     /**
      * get default connection socket timeout (default 0, means not timeout)
@@ -50,4 +52,12 @@ public class PoolConfig extends GenericObjectPoolConfig {
     public void setFailover(boolean failover) {
         this.failover = failover;
     }
+
+	public long getMaxAge() {
+		return maxAge;
+	}
+
+	public void setMaxAge(long maxAge) {
+		this.maxAge = maxAge;
+	}
 }

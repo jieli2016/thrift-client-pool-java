@@ -151,12 +151,19 @@ public class ThriftClientPool<T extends TServiceClient> {
                         return false;
                     }
                 }
+                
+                long createTime = p.getCreateTime();
+                if (createTime + config.getMaxAge() < System.currentTimeMillis()) {
+                	logger.info("connection too old, retire it, " + p.getCreateTime());
+                	return false;
+                }
 
                 return super.validateObject(p);
             }
 
             @Override
             public void destroyObject(PooledObject<ThriftClient<T>> p) throws Exception {
+            	logger.info("destroy connection, " + p.getCreateTime());
                 p.getObject().closeClient();
                 super.destroyObject(p);
             }

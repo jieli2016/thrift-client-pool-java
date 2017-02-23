@@ -7,6 +7,7 @@ import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.transport.TFramedTransport;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.wealoha.thrift.service.TestThriftService.Client;
@@ -16,6 +17,7 @@ import com.wealoha.thrift.service.TestThriftService.Client;
  * @author javamonk
  * @createTime 2015年6月5日 下午2:32:15
  */
+@Ignore
 public class TestShardedThriftClientPool {
 
     @BeforeClass
